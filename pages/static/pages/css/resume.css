@@ -1,0 +1,77 @@
+/*
+---------------------------------------------------------------------------------
+	STRIPPED DOWN RESUME TEMPLATE
+    html resume
+
+    v0.9: 5/28/09
+
+    design and code by: thingsthatarebrown.com 
+                        (matt brown)
+---------------------------------------------------------------------------------
+*/
+
+
+div.res .msg { padding: 10px; background: #222; position: relative; }
+div.res .msg h1 { color: #fff;  }
+div.res .msg a { margin-left: 20px; background: #408814; color: white; padding: 4px 8px; text-decoration: none; }
+div.res .msg a:hover { background: #266400; }
+
+/* //-- yui-grids style overrides -- */
+div.res { font-family: Georgia; color: #444; margin:auto; width:100vw; font-size: 0.9em;}
+div.res #inner { padding: 10px 80px; margin: 80px auto; background: #f5f5f5; border:none }
+div.res .yui-gf { margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid #ccc; }
+
+/* //-- header, body, footer -- */
+div.res #hd { margin: 2.5em 0 3em 0; padding-bottom: 1.5em; border-bottom: 1px solid #ccc }
+div.res #hd h2 { text-transform: uppercase; letter-spacing: 2px; }
+div.res #bd, #ft { margin-bottom: 2em; }
+
+/* //-- footer -- */
+div.res #ft { padding: 1em 0 5em 0; font-size: 92%; border-top: 1px solid #ccc; text-align: center; }
+div.res #ft p { margin-bottom: 0; text-align: center;   }
+
+/* //-- core typography and style -- */
+div.res #hd h1 { font-size: 48px; text-transform: uppercase; letter-spacing: 3px; }
+div.res h2 { font-size: 152% }
+div.res h3, div.res h4 { font-size: 122%; }
+div.res h1, div.res h2, div.res h3, div.res h4 { color: #333; }
+div.res p { font-size: 100%; line-height: 18px; padding-right: 3em; }
+div.res a { color: #990003 }
+div.res a:hover { text-decoration: none; }
+div.res strong { font-weight: bold; }
+div.res li { line-height: 24px; border-bottom: 1px solid #ccc; }
+div.res p.enlarge { font-size: 144%; padding-right: 6.5em; line-height: 24px; }
+div.res p.enlarge div.res span { color: #000 }
+div.res .contact-info { margin-top: 7px; }
+div.res .first div.res h2 { font-style: italic; }
+div.res .last { border-bottom: 0 }
+
+
+/* //-- section styles -- */
+
+div.res a#pdf { display: block; float: left; background: #666; color: white; padding: 6px 50px 6px 12px; margin-bottom: 6px; text-decoration: none;  }
+div.res a#pdf:hover { background: #222; }
+
+div.res .job { position: relative; margin-bottom: 1em; padding-bottom: 1em; border-bottom: 1px solid #ccc; }
+div.res .job h4 { position: absolute; top: 0.35em; right: 0 }
+div.res .job p { margin: 0.75em 0 3em 0; }
+
+div.res .last { border: none; }
+div.res .skills-list {  }
+div.res .skills-list ul { margin: 0; }
+div.res .skills-list li { margin: 3px 0; padding: 3px 0; }
+div.res .skills-list li span { font-size: 152%; display: block; margin-bottom: -2px; padding: 0 }
+div.res .talent { width: 32%; float: left }
+div.res .talent h2 { margin-bottom: 6px; font-size: 140%}
+
+div.res #srt-ttab { margin-bottom: 100px; text-align: center;  }
+div.res #srt-ttab img.last { margin-top: 20px }
+
+/* --// override to force 1/8th width grids -- */
+div.res .yui-gf .yui-u{width:80%;}
+div.res .yui-gf div.first{width:12.3%;}
+
+
+div.res .exp li {border-bottom: none; line-height: 18px; font-size: 92%; margin-left:10px}
+
+

@@ -1,0 +1,40 @@
+{% extends 'pages/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Renaissance Man{% endblock %}
+
+{% block stylesheetslast %}<link href="{% static 'pages/bootstrap/css/cover.css' %}" rel="stylesheet">{% endblock %}
+
+{% block bodyblock %}
+<div class="site-wrapper">
+
+      <div class="site-wrapper-inner" style>
+
+        <div class="cover-container">
+            <h1 class="cover-heading" style="text-align:center; font-size:4em;">Noah Muldavin</h1>
+          <div class="inner cover">
+              <div class="col-md-6" style="text-align:center">
+                    <img src="{% static 'pages/images/tikibartending.jpg' %}" alt="Profile Picture" width="300">
+              </div>
+              <div class="col-md-6" style="text-align:left" >
+                  <h3 style="color: #444;">A Science Educator, Programmer, and Physicist living in Portland.</h3>
+                  <p class="lead">
+                    I am currently running the instructional physics labs at Reed College while learning python web development independently.</p>
+                  <p class="lead">
+                    In my spare time I perfect my repertoire of hand-crafted
+                    tropical cocktails and am starting to bartend parties as opportunities arise.
+                    I am also an avid squash player, hiker, and musician.
+                  </p>
+
+              <a href={% url 'pages:projects' %} class="btn btn-lg btn-default">Check Out Some of My Work</a>
+              </div>
+
+
+
+          </div>
+
+        </div>
+
+      </div>
+{% endblock %}

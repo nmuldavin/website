@@ -1,0 +1,148 @@
+{% extends 'pages/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Renaissance Man{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block bodyblock %}
+<div class="container" role="main">
+    <div class="container bob">
+        <div class="jumbotron" id="portfoliotop">
+            <h1>Project Portfolio</h1>
+            <p class="lead">Have a look at some of my work!</p>
+        </div>
+
+        <div class="jumbotron" id="portfoliobottom">
+            <h2>Undergraduate Thesis</h2>
+            <p>I wrote an undergraduate thesis on
+                <em>The N-Body Simulation of Galaxy Dynamics.</em>
+                To produce the main result I wrote an N-Body simulation code to model the evolution of an SC class galaxy.
+                A video of the final run is included below.
+                I put a lot of effort in to the document itself, including extensive historical discussion
+                and scientific background leading up to a discussion of the result.
+                You can view the document  <a href="{% url 'pages:thesis' %}">here</a>.
+            </p>
+            <div class="row marketing">
+                <div class="col-md-6" style="text-align:center">
+                    <iframe align="middle" width="420" height="315" src="https://www.youtube.com/embed/I_VawbQk1N0" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <div class="col-md-6 col-md-4 col-sm-offset-1">
+                    <div class="center-block">
+                        <a href="{% url 'pages:thesis' %}" class="thumbnail">
+                        <img src={% static 'pages/thumbnails/thesisthumb.jpg' %} alt="Thesis">
+                    </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <h2>N-Body Simulation Package</h2>
+            <p>
+                As the culmination of my undergraduate research I wrote a polished astrophysical N-Body simulation code in C++ designed to be used by
+                future students interested either in using the code or writing another. It includes an adaptive timestep routine,
+                a tree-code force calculation routine, and routines to aid in the construction of initial conditions to model a composite disk galaxy.
+                In addition, it includes extensive code documentation and guides to using the code and understanding
+                the nuances of astrophysical N-Body simulation. The full package is hosted <a href="https://github.com/nmuldavin/NBodyIntegrator">on my GitHub</a>.
+                A section of the code is included below.
+                <div class="center">
+                <pre class="prettyprint lang-cpp">
+//
+//  treeforce.cpp
+//  methods for force calculation given a tree datastructure
+//
+//  Created by Noah Muldavin
+//  Reed College
+//  2013
+/******************************************************************************/
+
+
+#include "treeforce.hpp"
+
+
+//  gravity returns the force on an object i from another object j given its
+//  mass and a vector pointing from i to j. Includes the softening length eps
+
+Vector gravity(double mass, Vector rij, double eps)
+{
+    Vector force(3);                        //  force variable
+    double d2;                              //  distance squared
+    d2 = rij*rij + eps*eps;                 //  setting distance squared
+    force = -rij*mass/pow(d2, 1.5);         //  setting force
+    return force;                           //  output
+}
+
+
+//  treeforce returns the force on a body due to the collection of bodies
+//  within a tree located at root.
+
+Vector treeforce(bodynode* body, treenode* root, double eps, double theta)
+{
+    Vector rij(3);                          //  separation vector
+    Vector force(3);                        //  force vector
+    double r;                               //  separation magnitude
+    force = 0.0;                            //  zeros force vector
+    rij = body->pos - root->pos;            //  sets separation vector
+    if (!root->isbody)                      //  if the node is a cell
+    {
+        r = rij.norm();                     //  sets separation magnitude
+        if ((2.0*root->d)/r < theta)        //  if acceptable
+        {
+            force += gravity(root->mass, rij, eps);  //  add force from COM
+        }
+        else                                //  if not acceptible
+        {
+            for (int i = 0; i < 8; i++)     //  add force from each child node
+            {
+                if (((cellnode*) root)->child[i] != 0)  //  if it exists
+                {
+                    force += treeforce(body, ((cellnode*) root)->child[i],
+                                                                    eps, theta);
+                }
+            }
+        }
+    }
+    else                                    //  if the node is a bodynode
+    {
+        if (body->id != ((bodynode*) root)->id) //  add force from body
+        {
+            force += gravity(root->mass, rij, eps);
+        }
+    }
+    return force;
+}
+
+                </pre>
+            </div>
+            </p>
+
+            <h2>This Website</h2>
+            <p>
+                I made this website! It is mostly static HTML/CSS but uses some Django functionality
+                for template inheritance and a few other things (notice it highlighting the current page you're on).
+            </p>
+
+            <h2>Physics Lab Curriculum and Technical Writing</h2>
+            <p>
+                I have an extensive portfolio of lab curriculum I wrote during my time as the lab coordinator at Reed College.
+                It would not be appropriate to post on a public site, please contact me if you are interested in sample work.
+            </p>
+
+            <h2>In Progress: A Django App for Cocktail Enthusiasts</h2>
+            <p>
+                I am currently working on an app designed for cocktail enthusiasts to organize recipes and make notes about their
+                favorite drinks, brands, and tips.
+            </p>
+
+      </div>
+
+    </div>
+
+
+</div>
+
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+
+{% endblock %}
