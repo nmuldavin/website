@@ -19,10 +19,6 @@ ALLOWED_HOSTS = [] # must match site domain
 
 # Application definition
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
