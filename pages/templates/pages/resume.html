@@ -3,7 +3,7 @@
 {% load staticfiles %}
 
 {% block stylesheetsfirst %}
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" />
+    <link href="{% static 'pages/css/reset-fonts-grids.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block stylesheetslast %}
