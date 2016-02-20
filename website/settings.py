@@ -58,8 +58,6 @@ TEMPLATES = [
 
 ROOT_URLCONF = 'website.urls'
 
-WSGI_APPLICATION = 'website.wsgi.application'
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
