@@ -19,6 +19,10 @@ ALLOWED_HOSTS = [] # must match site domain
 
 # Application definition
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -62,7 +66,7 @@ WSGI_APPLICATION = 'website.wsgi.application'
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'US/Pacific'
 
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
