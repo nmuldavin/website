@@ -17,7 +17,6 @@ ALLOWED_HOSTS = [] # must match site domain
 
 # Update database configuration with $DATABASE_URL.
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -82,4 +81,3 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/static/'
