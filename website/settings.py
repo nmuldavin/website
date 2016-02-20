@@ -13,7 +13,8 @@ SECRET_KEY = 'rqir4=66av#&zcchm5jwcps-bz2x_0&1%r8eonl%e8104ove8d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['aqueous-brushlands-80688.herokuapp.com',
+ALLOWED_HOSTS = ['www.nmuldavin.com'
+    'aqueous-brushlands-80688.herokuapp.com',
                  '0.0.0.0'] # must match site domain
 
 # Update database configuration with $DATABASE_URL.
