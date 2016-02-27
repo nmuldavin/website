@@ -9,6 +9,7 @@ urlpatterns = [
     url(r'^resume/', TemplateView.as_view(template_name='pages/resume.html'), name='resume'),
     url(r'^thesis/', TemplateView.as_view(template_name='pages/thesis.html'), name='thesis'),
     url(r'^projects/', TemplateView.as_view(template_name='pages/projects.html'), name='projects'),
+    url(r'^webgl/', TemplateView.as_view(template_name='pages/webgl.html'), name='webgl'),
     url(r'^contact/', views.contact, name='contact'),
     url(r'^contactsuccess/', TemplateView.as_view(template_name='pages/contactsuccess.html'), name='contactsuccess'),
 ]

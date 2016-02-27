@@ -57,6 +57,9 @@
             {% url 'pages:projects' as url %}
             <li {% if request.path == url %} class="active"{% endif %}><a href={{ url }}>Projects</a></li>
 
+            {% url 'pages:webgl' as url %}
+            <li {% if request.path == url %} class="active"{% endif %}><a href={{ url }}>WebGL</a></li>
+
             {% url 'pages:thesis' as url %}
             <li {% if request.path == url %} class="active"{% endif %}><a href={{ url }}>Thesis</a></li>
 
