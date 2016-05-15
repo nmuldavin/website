@@ -15,7 +15,13 @@
         </div>
 
         <div class="jumbotron" id="portfoliobottom">
-            <h2>Web-App: Remixology</h2>
+            <h2>Armageddon Tracker: An asteroid close-encounter log. </h2>
+            <p>Armageddon Tracker is a web-app that logs upcoming close-encounters with known asteroids. Users can search any dates past or present. The front-end is built entirely
+              in React with animations using react-motion. All data is from the NASA Near Earth Object Web Service. I am quite proud of
+              how it turned out! The complete project source is available <a style="color:black" href="https://github.com/nmuldavin/ArmageddonTracker">on my GitHub</a>.</p>
+            <p style="text-align:center"><a href="http://www.armageddontracker.com" class="btn btn-lg btn-default">Check it out!</a></p>
+
+            <h2>Web-App: A web-app for cocktail enthusiasts.</h2>
             <p>Remixology is a web-app I wrote with Python/Django, Javascript and PostgreSQL. It is a tool for organizing and comparing different versions of cocktail recipes
             that you create yourself or that you get from outside sources. It is a work in progress that I continue to improve as time allows. The complete project source
             is available <a style="color:black" href="https://github.com/nmuldavin/remixology">on my GitHub</a>.</p>
@@ -24,6 +30,14 @@
             <p>A library of vector methods that can be added to any array or Array.prototype. Also provides a Vector pseudoclass
             inheriting all Array functionality and the added vector methods so that the base Array methods can be left untouched
             if need be. The library is available <a style="color:black" href="https://github.com/nmuldavin/vector-methods">here.</a></p>
+
+            <h2>WebGL</h2>
+            <p>
+                I have been experimenting with webGL in an attempt to make an in-browser GPU based N-Body simulator.
+                I will be keeping <a href="{% url 'pages:webgl' %}" style="color:black">this page</a> updated
+                with cool stuff I've made along the way. My most recent project is a live-calculated visualization of the Mandlebrot set.
+            </p>
+
             <h2>Undergraduate Thesis</h2>
             <p>I wrote an undergraduate thesis on
                 <em>The N-Body Simulation of Galaxy Dynamics.</em>
@@ -47,12 +61,6 @@
 
                 </div>
             </div>
-            <h2>WebGL</h2>
-            <p>
-                I have been experimenting with webGL in an attempt to make an in-browser GPU based N-Body simulator.
-                I will be keeping <a href="{% url 'pages:webgl' %}" style="color:black">this page</a> updated
-                with cool stuff I've made along the way. My most recent project is a live-calculated visualization of the Mandlebrot set.
-            </p>
 
             <h2>N-Body Simulation Package</h2>
             <p>
@@ -60,7 +68,7 @@
                 future students interested either in using the code or writing another. It includes an adaptive timestep routine,
                 a tree-code force calculation routine, and routines to aid in the construction of initial conditions to model a composite disk galaxy.
                 In addition, it includes extensive code documentation and guides to using the code and understanding
-                the nuances of astrophysical N-Body simulation. The full package is hosted <a href="https://github.com/nmuldavin/NBodyIntegrator">on my GitHub</a>.
+                the nuances of astrophysical N-Body simulation. The full package is hosted <a style="color:black" href="https://github.com/nmuldavin/NBodyIntegrator">on my GitHub</a>.
                 A section of the code is included below.
                 <div class="center">
                 <pre class="prettyprint lang-cpp">
@@ -135,7 +143,7 @@ Vector treeforce(bodynode* body, treenode* root, double eps, double theta)
 
             <h2>Physics Lab Curriculum and Technical Writing</h2>
             <p>
-                I have an extensive portfolio of lab curriculum I wrote during my time as the lab coordinator at Reed College.
+                I have an extensive portfolio of lab curricula and technical writing I wrote during my time as the lab coordinator at Reed College.
                 It would not be appropriate to post on a public site, please contact me if you are interested in sample work.
             </p>
 
