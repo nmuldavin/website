@@ -1,0 +1,12 @@
+@import '../../styles/theme';
+
+.link {
+  color: $blue;
+  font-weight: bold;
+
+  :global {
+    .taco {
+      border: 10;
+    }
+  }
+};
