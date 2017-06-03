@@ -2,6 +2,7 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 const extractSass = new ExtractTextPlugin({
   filename: '[name].[contenthash].css',
@@ -16,6 +17,15 @@ const cssLoader = {
   },
 };
 
+const postcssLoader = {
+  loader: 'postcss-loader',
+  options: {
+    plugins: [
+      autoprefixer,
+    ],
+  },
+};
+
 const commonConfig = require('./webpack.common');
 
 const customConfig = {
@@ -23,7 +33,7 @@ const customConfig = {
     rules: [{
       test: /\.scss$/,
       use: extractSass.extract({
-        use: [cssLoader, 'sass-loader'],
+        use: [cssLoader, postcssLoader, 'sass-loader'],
         fallback: 'style-loader',
       }),
     }],
